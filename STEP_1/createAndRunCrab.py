@@ -3,15 +3,22 @@
 import os, datetime, pwd, re
 from subprocess import Popen, PIPE
 import subprocess
+import xml.dom.minidom
 
 from optparse import OptionParser
 parser = OptionParser()
+parser.add_option("", "--create", action="store_true", dest="create", default=False, help="run crab")
 parser.add_option("", "--run", action="store_true", dest="run", default=False, help="run crab")
 (options, args) = parser.parse_args()
 
+if options.run:
+    options.create = True
+
 datasets = [
 
-        ["/S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M400_cpl1_pseudoscalar"]
+        ["/S0_S_i_M500_cpl1_scalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M500_cpl1_scalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M500_cpl1_scalar"],
+
+        #["/S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M400_cpl1_pseudoscalar"]
         ]
 
 # Get email address
@@ -46,6 +53,22 @@ for dataset_info in datasets:
   # Create crab template
   os.system("sed -e \"s#@datasetpath@#%(datasetpath)s#\" -e \"s#@pset@#%(pset)s#\" -e \"s#@events@#%(events)s#\" -e \"s#@working_dir@#%(working_dir)s#\" -e \"s#@output_dir@#%(output_dir)s#\" -e \"s#@publish_name@#%(publish_name)s#\" -e \"s#@event_per_job@#%(event_per_job)s#\" crab.template > %(output)s" % {"pset": python_file, "output": output_file, "working_dir": ui_working_dir, "events": -1, "output_dir": "NOT_USED", "publish_name": publish_name, "event_per_job": 1300, "datasetpath": dataset_files})
 
-  cmd = "crab -create -submit -cfg %s" % (output_file)
+  if options.create:
+    cmd = "crab -create -cfg %s" % (output_file)
+    os.system(cmd)
+
+    print "Modifying list of input files..."
+    # Edit arguments.xml file to hardcode input files. Allow to run at CERN!
+    argFile = os.path.join(ui_working_dir, 'share', 'arguments.xml')
+    dom = xml.dom.minidom.parse(argFile)
+    for elem in dom.getElementsByTagName("Job"):
+      inputFiles = str(elem.getAttribute('InputFiles'))
+      inputFileNames = inputFiles.split(',')
+      inputFileNames = ["root://ccxrootdcms.in2p3.fr:1094/pnfs/in2p3.fr/data/cms/t2data" + inputFileName for inputFileName in inputFileNames]
+      elem.setAttribute('InputFiles', ",".join(inputFileNames))
+    with open(argFile, 'w') as f:
+      f.write(dom.toxml())
+    print "Done"
+
   if options.run:
     os.system(cmd)
