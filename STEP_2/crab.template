@@ -1,0 +1,38 @@
+[CRAB]
+jobtype = cmssw
+scheduler = remoteGlideIn
+use_server = 0
+
+[CMSSW]
+
+dbs_url = http://cmsdbsprod.cern.ch/cms_dbs_ph_analysis_02/servlet/DBSServlet
+datasetpath = @datasetpath@
+pset = @pset@
+
+total_number_of_events = @events@
+
+### Number of events to be processed per job
+events_per_job = @event_per_job@
+
+### The output files produced by your application (comma separated list)
+output_file = output_GEN-SIM-RAW-RECO.root
+
+[USER]
+
+ui_working_dir = @working_dir@
+
+return_data = 0
+copy_data = 1
+
+storage_element = T3_FR_IPNL
+
+user_remote_dir = @output_dir@
+check_user_remote_dir = 0
+
+publish_data = 1
+dbs_url_for_publication = https://cmsdbsprod.cern.ch:8443/cms_dbs_ph_analysis_02_writer/servlet/DBSServlet
+publish_data_name = @publish_name@
+
+[GRID]
+virtual_organization = cms
+data_location_override = T2_CH_CERN,T2_FR_CCIN2P3
