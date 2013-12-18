@@ -34,5 +34,5 @@ dbs_url_for_publication = https://cmsdbsprod.cern.ch:8443/cms_dbs_ph_analysis_02
 publish_data_name = @publish_name@
 
 [GRID]
-virtual_organization = cms
-data_location_override = T2_CH_CERN,T2_FR_CCIN2P3
+data_location_override = None
+additional_jdl_parameters = +DESIRED_Gatekeepers="ce208.cern.ch:8443/cream-lsf-grid_cms,cccreamceli08.in2p3.fr:8443/cream-sge-verylong,cccreamceli07.in2p3.fr:8443/cream-sge-verylong"
