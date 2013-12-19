@@ -13,8 +13,8 @@ parser.add_option("", "--run", action="store_true", dest="run", default=False, h
 
 datasets = [
 
-        #["/S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M400_cpl1_pseudoscalar"]
-        ["/S0_S_i_M500_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M500_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M500_cpl1_pseudoscalar"]
+        ["/S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M400_cpl1_pseudoscalar"]
+        #["/S0_S_i_M500_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M500_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M500_cpl1_pseudoscalar"]
         #["/S0_S_i_M600_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M600_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M600_cpl1_pseudoscalar"]
         #["/S0_S_i_M700_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M700_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M700_cpl1_pseudoscalar"]
         #["/S0_S_i_M800_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M800_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M800_cpl1_pseudoscalar"]
@@ -38,7 +38,7 @@ for dataset_info in datasets:
   dataset_name = dataset_info[1];
 
   ui_working_dir = ("crab_%s") % (dataset_name)
-  publish_name = "%s_%s_START53_V19-GEN-SIM-RAW" % (dataset_name, d)
+  publish_name = "%s_%s_START53_V19-GEN-SIM" % (dataset_name, d)
   output_file = "crab_%s.cfg" % (dataset_name)
   python_file = "%s_cff.py" % (dataset_name)
 
@@ -48,7 +48,7 @@ for dataset_info in datasets:
     print("")
 
     # Execute cmsDriver.py
-    args = ["cmsDriver.py", "step1", "--filein", "file:dummy.root", "--fileout", "file:output_GEN-SIM-RAW.root", "--mc", "--eventcontent", "RAWSIM", "--datatier", "GEN-SIM-RAW", "--conditions", "START53_V19::All", "--beamspot", "Realistic8TeVCollision", "--pileup", "2012_Summer_50ns_PoissonOOTPU", "--pileup_input", "dbs:/MinBias_TuneZ2star_8TeV-pythia6/Summer12-START50_V13-v3/GEN-SIM", "--step", "SIM,DIGI,L1,DIGI2RAW,HLT:7E33v2", "--no_exec", "--python_file", python_file, "-n", "5"]
+    args = ["cmsDriver.py", "step1", "--filein", "file:dummy.root", "--fileout", "file:output_GEN-SIM.root", "--mc", "--eventcontent", "RAWSIM", "--datatier", "GEN-SIM", "--conditions", "START53_V19::All", "--beamspot", "Realistic8TeVCollision", "--pileup", "2012_Summer_50ns_PoissonOOTPU", "--pileup_input", "dbs:/MinBias_TuneZ2star_8TeV-pythia6/Summer12-START50_V13-v3/GEN-SIM", "--step", "SIM", "--no_exec", "--python_file", python_file, "-n", "5"]
     with open("/dev/null", "w") as f:
       subprocess.call(args, stdout=f)
 

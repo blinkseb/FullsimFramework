@@ -15,7 +15,7 @@ total_number_of_events = @events@
 events_per_job = @event_per_job@
 
 ### The output files produced by your application (comma separated list)
-output_file = output_GEN-SIM-RAW.root
+output_file = output_GEN-SIM.root
 
 [USER]
 
