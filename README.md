@@ -3,7 +3,8 @@ FullsimFramework
 
 A set of script for full simulation inside CMS
 
-== Setup
+## Setup
+
     cmsrel CMSSW_5_3_12_patch3
     cd CMSSW_5_3_12_patch3/src
 
