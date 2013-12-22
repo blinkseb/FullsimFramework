@@ -13,10 +13,10 @@ parser.add_option("", "--run", action="store_true", dest="run", default=False, h
 
 datasets = [
 
-        ["/S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M400_cpl1_pseudoscalar"]
+        #["/S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M400_cpl1_pseudoscalar"]
         #["/S0_S_i_M500_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M500_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M500_cpl1_pseudoscalar"]
         #["/S0_S_i_M600_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M600_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M600_cpl1_pseudoscalar"]
-        #["/S0_S_i_M700_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M700_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M700_cpl1_pseudoscalar"]
+        ["/S0_S_i_M700_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M700_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M700_cpl1_pseudoscalar"]
         #["/S0_S_i_M800_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M800_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M800_cpl1_pseudoscalar"]
         #["/S0_S_i_M900_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M900_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M900_cpl1_pseudoscalar"]
         #["/S0_S_i_M1000_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M1000_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M1000_cpl1_pseudoscalar"]
@@ -65,7 +65,7 @@ for dataset_info in datasets:
     for elem in dom.getElementsByTagName("Job"):
       inputFiles = str(elem.getAttribute('InputFiles'))
       inputFileNames = inputFiles.split(',')
-      inputFileNames = ["root://cms-xrd-global.cern.ch/" + inputFileName if not "root://" in inputFileName else inputFileName for inputFileName in inputFileNames]
+      inputFileNames = ["root://ccxrpli001.in2p3.fr:1094/" + inputFileName if not "root://" in inputFileName else inputFileName for inputFileName in inputFileNames]
       elem.setAttribute('InputFiles', ",".join(inputFileNames))
     with open(argFile, 'w') as f:
       f.write(dom.toxml())
