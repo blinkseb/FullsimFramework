@@ -16,7 +16,7 @@ if options.run:
 
 datasets = [
 
-        ["/S0_S_i_M500_cpl1_scalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M500_cpl1_scalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M500_cpl1_scalar"],
+        ["/S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M400_cpl1_pseudoscalar_19Dec13_START53_V19-GEN-SIM-c2458b69ea307520189b23a735ac3adb/USER", "S0_S_i_M400_cpl1_pseudoscalar"],
 
         ]
 
@@ -45,7 +45,8 @@ for dataset_info in datasets:
   print("")
 
   # Execute cmsDriver.py
-  args = ["cmsDriver.py", "step2", "--filein", "file:dummy.root", "--fileout", "file:output_GEN-SIM-RAW-RECO.root", "--mc", "--eventcontent", "AODSIM", "--datatier", "AODSIM", "--conditions", "START53_V19::All", "--beamspot", "Realistic8TeVCollision", "--pileup", "2012_Summer_50ns_PoissonOOTPU", "--pileup_input", "dbs:/MinBias_TuneZ2star_8TeV-pythia6/Summer12-START50_V13-v3/GEN-SIM", "--step", "DIGI,L1,DIGI2RAW,HLT:7E33v2,RAW2DIGI,L1Reco,RECO", "--no_exec", "--python_file", python_file, "-n", "5"]
+  args = ["cmsDriver.py", "step2", "--filein", "file:dummy.root", "--fileout", "file:output_GEN-SIM-RAW.root", "--mc", "--eventcontent", "RAWSIM", "--datatier", "GEN-SIM-RAW", "--conditions", "START53_V19::All", "--beamspot", "Realistic8TeVCollision", "--pileup", "2012_Summer_50ns_PoissonOOTPU", "--pileup_input", "dbs:/MinBias_TuneZ2star_8TeV-pythia6/Summer12-START50_V13-v3/GEN-SIM", "--step", "DIGI,L1,DIGI2RAW,HLT:7E33v2", "--no_exec", "--python_file", python_file, "-n", "5"]
+  # args = ["cmsDriver.py", "step2", "--filein", "file:dummy.root", "--fileout", "file:output_GEN-SIM-RAW-RECO.root", "--mc", "--eventcontent", "AODSIM", "--datatier", "AODSIM", "--conditions", "START53_V19::All", "--beamspot", "Realistic8TeVCollision", "--pileup", "2012_Summer_50ns_PoissonOOTPU", "--pileup_input", "dbs:/MinBias_TuneZ2star_8TeV-pythia6/Summer12-START50_V13-v3/GEN-SIM", "--step", "DIGI,L1,DIGI2RAW,HLT:7E33v2,RAW2DIGI,L1Reco,RECO", "--no_exec", "--python_file", python_file, "-n", "5"]
   with open("/dev/null", "w") as f:
     subprocess.call(args, stdout=f)
 
@@ -63,7 +64,7 @@ for dataset_info in datasets:
     for elem in dom.getElementsByTagName("Job"):
       inputFiles = str(elem.getAttribute('InputFiles'))
       inputFileNames = inputFiles.split(',')
-      inputFileNames = ["root://cms-xrd-global.cern.ch/" + inputFileName if not "root://" in inputFileName else inputFileName for inputFileName in inputFileNames]
+      inputFileNames = ["root://ccxrpli001.in2p3.fr:1094/" + inputFileName if not "root://" in inputFileName else inputFileName for inputFileName in inputFileNames]
       elem.setAttribute('InputFiles', ",".join(inputFileNames))
     with open(argFile, 'w') as f:
       f.write(dom.toxml())
