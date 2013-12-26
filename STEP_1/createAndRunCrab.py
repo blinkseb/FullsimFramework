@@ -13,13 +13,21 @@ parser.add_option("", "--run", action="store_true", dest="run", default=False, h
 
 datasets = [
 
-        #["/S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M400_cpl1_pseudoscalar"]
-        #["/S0_S_i_M500_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M500_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M500_cpl1_pseudoscalar"]
-        #["/S0_S_i_M600_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M600_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M600_cpl1_pseudoscalar"]
-        ["/S0_S_i_M700_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M700_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M700_cpl1_pseudoscalar"]
-        #["/S0_S_i_M800_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M800_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M800_cpl1_pseudoscalar"]
-        #["/S0_S_i_M900_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M900_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M900_cpl1_pseudoscalar"]
-        #["/S0_S_i_M1000_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M1000_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M1000_cpl1_pseudoscalar"]
+        ["/S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M400_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M400_cpl1_pseudoscalar"],
+        ["/S0_S_i_M500_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M500_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M500_cpl1_pseudoscalar"],
+        ["/S0_S_i_M600_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M600_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M600_cpl1_pseudoscalar"],
+        ["/S0_S_i_M700_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M700_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M700_cpl1_pseudoscalar"],
+        ["/S0_S_i_M800_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M800_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M800_cpl1_pseudoscalar"],
+        ["/S0_S_i_M900_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M900_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M900_cpl1_pseudoscalar"],
+        ["/S0_S_i_M1000_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M1000_cpl1_pseudoscalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M1000_cpl1_pseudoscalar"],
+
+        ["/S0_S_i_M400_cpl1_scalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M400_cpl1_scalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M400_cpl1_scalar"],
+        ["/S0_S_i_M500_cpl1_scalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M500_cpl1_scalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M500_cpl1_scalar"],
+        ["/S0_S_i_M600_cpl1_scalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M500_cpl1_scalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M600_cpl1_scalar"],
+        ["/S0_S_i_M700_cpl1_scalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M500_cpl1_scalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M700_cpl1_scalar"],
+        ["/S0_S_i_M800_cpl1_scalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M500_cpl1_scalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M800_cpl1_scalar"],
+        ["/S0_S_i_M900_cpl1_scalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M500_cpl1_scalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M900_cpl1_scalar"],
+        ["/S0_S_i_M1000_cpl1_scalar_15Dec13_START53_V7C-GEN/sbrochet-S0_S_i_M500_cpl1_scalar_15Dec13_START53_V7C-GEN-079007546424d40489b5946340eef018/USER", "S0_S_i_M1000_cpl1_scalar"]
         ]
 
 # Get email address
