@@ -24,7 +24,7 @@ ui_working_dir = @working_dir@
 return_data = 0
 copy_data = 1
 
-storage_element = T3_FR_IPNL
+storage_element = T2_FR_CCIN2P3
 
 user_remote_dir = @output_dir@
 check_user_remote_dir = 0
@@ -34,6 +34,4 @@ dbs_url_for_publication = https://cmsdbsprod.cern.ch:8443/cms_dbs_ph_analysis_02
 publish_data_name = @publish_name@
 
 [GRID]
-data_location_override = None
-#additional_jdl_parameters = +DESIRED_Gatekeepers="cccreamceli08.in2p3.fr:8443/cream-sge-verylong,cccreamceli07.in2p3.fr:8443/cream-sge-verylong"
-additional_jdl_parameters = +DESIRED_Gatekeepers="ce208.cern.ch:8443/cream-lsf-grid_cms,cccreamceli08.in2p3.fr:8443/cream-sge-verylong,cccreamceli07.in2p3.fr:8443/cream-sge-verylong,grid-cr1.desy.de:8443/cream-pbs-cms,grid-cr2.desy.de:8443/cream-pbs-cms,grid-cr3.desy.de:8443/cream-pbs-cms,grid-cr4.desy.de:8443/cream-pbs-cms,sbgce2.in2p3.fr:8443/cream-pbs-cms,grid36.lal.in2p3.fr:8443/cream-pbs-cms,node74.datagrid.cea.fr:8443/cream-pbs-cms,ingrid.cism.ucl.ac.be:8443/cream-condor-cms,ce-01.roma3.infn.it:8443/cream-pbs-grid,ce.scope.unina.it:8443/cream-pbs-egee_long,ce01-lcg.cr.cnaf.infn.it:8443/cream-lsf-cms,ce04-lcg.cr.cnaf.infn.it:8443/cream-lsf-cms,ce05-lcg.cr.cnaf.infn.it:8443/cream-lsf-cms,ce06-lcg.cr.cnaf.infn.it:8443/cream-lsf-cms,ce07-lcg.cr.cnaf.infn.it:8443/cream-lsf-cms,ce08-lcg.cr.cnaf.infn.it:8443/cream-lsf-cms,ce1.ts.infn.it:8443/cream-lsf-cms,cream-ce.pg.infn.it:8443/cream-pbs-cms,grid012.ct.infn.it:8443/cream-lsf-cms,gridce0.pi.infn.it:8443/cream-lsf-cms,gridce1.pi.infn.it:8443/cream-lsf-cms,gridce2.pi.infn.it:8443/cream-lsf-cms,grisuce.scope.unina.it:8443/cream-pbs-grisu_long,t2-ce-01.lnl.infn.it:8443/cream-lsf-cms,t2-ce-02.lnl.infn.it:8443/cream-lsf-cms,t2-ce-03.lnl.infn.it:8443/cream-lsf-cms,t2-ce-04.lnl.infn.it:8443/cream-lsf-cms, t2-ce-06.lnl.infn.it:8443/cream-lsf-cms,ce301.cern.ch:8443/cream-lsf-grid_cms,ce302.cern.ch:8443/cream-lsf-grid_cms,ce401.cern.ch:8443/cream-lsf-grid_cms,ce402.cern.ch:8443/cream-lsf-grid_cms,ce403.cern.ch:8443/cream-lsf-grid_cms,ce404.cern.ch:8443/cream-lsf-grid_cms,ce405.cern.ch:8443/cream-lsf-grid_cms,ce406.cern.ch:8443/cream-lsf-grid_cms,ce407.cern.ch:8443/cream-lsf-grid_cms,ce408.cern.ch:8443/cream-lsf-grid_cms"
+data_location_override = T2_FR_CCIN2P3
