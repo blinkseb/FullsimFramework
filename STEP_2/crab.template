@@ -24,7 +24,7 @@ ui_working_dir = @working_dir@
 return_data = 0
 copy_data = 1
 
-storage_element = T3_FR_IPNL
+storage_element = T2_FR_CCIN2P3
 
 user_remote_dir = @output_dir@
 check_user_remote_dir = 0
@@ -35,6 +35,3 @@ publish_data_name = @publish_name@
 
 [GRID]
 data_location_override = T3_FR_IPNL
-#additional_jdl_parameters = +DESIRED_Gatekeepers="llrcream.in2p3.fr:8443/cream-pbs-cms,lyogrid07.in2p3.fr:8443/cream-pbs-cms,ce201.cern.ch:8443/cream-lsf-grid_cms,ce202.cern.ch:8443/cream-lsf-grid_cms,ce203.cern.ch:8443/cream-lsf-grid_cms,ce204.cern.ch:8443/cream-lsf-grid_cms,ce205.cern.ch:8443/cream-lsf-grid_cms,ce206.cern.ch:8443/cream-lsf-grid_cms,ce207.cern.ch:8443/cream-lsf-grid_cms,atlas-cream01.na.infn.it:8443/cream-pbs-cms,atlas-cream02.na.infn.it:8443/cream-pbs-cms,atlasce1.lnf.infn.it:8443/cream-pbs-cms,atlasce2.lnf.infn.it:8443/cream-pbs-cms,atlasce3.lnf.infn.it:8443/cream-pbs-cms,cert-37.pd.infn.it:8443/cream-lsf-cms,grid0.fe.infn.it:8443/cream-pbs-lcg,gridce.ilc.cnr.it:8443/cream-pbs-cms,pamelace01.na.infn.it:8443/cream-pbs-grid,prod-ce-01.pd.infn.it:8443/cream-lsf-cms,recasce01.na.infn.it:8443/cream-pbs-cms"
-
-#additional_jdl_parameters = +DESIRED_Gatekeepers="llrcream.in2p3.fr:8443/cream-pbs-cms,lyogrid07.in2p3.fr:8443/cream-pbs-cms,ce201.cern.ch:8443/cream-lsf-grid_cms,ce202.cern.ch:8443/cream-lsf-grid_cms,ce203.cern.ch:8443/cream-lsf-grid_cms,ce204.cern.ch:8443/cream-lsf-grid_cms,ce205.cern.ch:8443/cream-lsf-grid_cms,ce206.cern.ch:8443/cream-lsf-grid_cms,ce207.cern.ch:8443/cream-lsf-grid_cms,atlas-cream01.na.infn.it:8443/cream-pbs-cms,atlas-cream02.na.infn.it:8443/cream-pbs-cms,atlasce1.lnf.infn.it:8443/cream-pbs-cms,atlasce2.lnf.infn.it:8443/cream-pbs-cms,atlasce3.lnf.infn.it:8443/cream-pbs-cms,cert-37.pd.infn.it:8443/cream-lsf-cms,grid0.fe.infn.it:8443/cream-pbs-lcg,gridce.ilc.cnr.it:8443/cream-pbs-cms,pamelace01.na.infn.it:8443/cream-pbs-grid,prod-ce-01.pd.infn.it:8443/cream-lsf-cms,recasce01.na.infn.it:8443/cream-pbs-cms,cream02.iihe.ac.be:8443/cream-pbs-cms"
