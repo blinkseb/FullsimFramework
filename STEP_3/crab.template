@@ -1,0 +1,38 @@
+[CRAB]
+jobtype = cmssw
+scheduler = remoteGlideIn
+use_server = 0
+
+[CMSSW]
+
+dbs_url = http://cmsdbsprod.cern.ch/cms_dbs_ph_analysis_02/servlet/DBSServlet
+datasetpath = @datasetpath@
+pset = @pset@
+
+total_number_of_events = @events@
+
+### Number of events to be processed per job
+events_per_job = @event_per_job@
+
+### The output files produced by your application (comma separated list)
+output_file = output_GEN-SIM-RAW-RECO.root
+
+[USER]
+
+ui_working_dir = @working_dir@
+
+return_data = 0
+copy_data = 1
+
+storage_element = T3_FR_IPNL
+
+user_remote_dir = @output_dir@
+check_user_remote_dir = 0
+
+publish_data = 1
+dbs_url_for_publication = https://cmsdbsprod.cern.ch:8443/cms_dbs_ph_analysis_02_writer/servlet/DBSServlet
+publish_data_name = @publish_name@
+
+[GRID]
+data_location_override = None
+additional_jdl_parameters = +DESIRED_Gatekeepers="llrcream.in2p3.fr:8443/cream-pbs-cms,lyogrid07.in2p3.fr:8443/cream-pbs-cms,ce201.cern.ch:8443/cream-lsf-grid_cms,ce202.cern.ch:8443/cream-lsf-grid_cms,ce203.cern.ch:8443/cream-lsf-grid_cms,ce204.cern.ch:8443/cream-lsf-grid_cms,ce205.cern.ch:8443/cream-lsf-grid_cms,ce206.cern.ch:8443/cream-lsf-grid_cms,ce207.cern.ch:8443/cream-lsf-grid_cms,atlas-cream01.na.infn.it:8443/cream-pbs-cms,atlas-cream02.na.infn.it:8443/cream-pbs-cms,atlasce1.lnf.infn.it:8443/cream-pbs-cms,atlasce2.lnf.infn.it:8443/cream-pbs-cms,atlasce3.lnf.infn.it:8443/cream-pbs-cms,cert-37.pd.infn.it:8443/cream-lsf-cms,grid0.fe.infn.it:8443/cream-pbs-lcg,gridce.ilc.cnr.it:8443/cream-pbs-cms,pamelace01.na.infn.it:8443/cream-pbs-grid,prod-ce-01.pd.infn.it:8443/cream-lsf-cms,recasce01.na.infn.it:8443/cream-pbs-cms,cream02.iihe.ac.be:8443/cream-pbs-cms"
